@@ -3,11 +3,9 @@ package com.example.secure_screenshot.secure_screenshot
 import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
-import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Size
-import android.view.WindowManager
 import androidx.core.content.ContextCompat
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
@@ -22,11 +20,6 @@ private const val EXTEND_CUTOFF_MILLIS = 15_000L
 class MainActivity : FlutterActivity() {
     private val methodChannelName = "secure_screenshot/monitor"
     private val eventChannelName = "secure_screenshot/monitor/events"
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        window.addFlags(WindowManager.LayoutParams.FLAG_SECURE)
-    }
 
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
